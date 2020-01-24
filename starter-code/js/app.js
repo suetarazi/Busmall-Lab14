@@ -29,7 +29,9 @@ var Product = function(filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
+  //localStorage.setItem('key', JSON.stringify(Products.allProducts));
 };
+
 Product.allProducts = [];
 
 function generateCatalog() {
