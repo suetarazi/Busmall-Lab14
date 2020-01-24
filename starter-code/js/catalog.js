@@ -10,24 +10,42 @@ var cart = new Cart([]);
 function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
-  var selectElement = document.getElementById('items');
+  var catalog = document.getElementById('catalog');
   var option = document.createElement('option');
   option.appendChild(document.createTextNode('Please select an option'));
-  selectElement.appendChild(option);    
-
+  catalog.appendChild(option);
   for (var i in Product.allProducts) {
   //  option.value = Products.allProducts;
     var foo = Product.allProducts[i];
-  var select = document.createElement('select');
-    select.textContent=foo.name;
-    select.value=foo.name;
-    selectElement.appendChild(select);
-    items.append(selectElement); 
-
-    console.log(selectElement);
+    var select = document.createElement('select');
+    select.textContent = foo.name;
+    select.value = foo.name;
+    //    foo.appendChild(value);
+    catalog.appendChild(select);
   }
-
+  console.log(catalog);
 }
+
+
+
+
+
+
+
+
+
+//  option.value = Products.allProducts;
+//   var foo = Product.allProducts[i];
+//   var select = document.createElement('select');
+//   select.textContent = foo.name;
+//   select.value = foo.name;
+//   selectElement.appendChild(select);
+// }selectElement.appendChild(items);
+
+// console.log(selectElement);
+
+
+
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
